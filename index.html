@@ -18,12 +18,15 @@
       color: red;
     }
   </style>
+
   <script>
-    // Check if the user is logged in by checking localStorage
+    // Check if user is logged in by verifying localStorage flag
     document.addEventListener('DOMContentLoaded', function() {
-      if (!localStorage.getItem('isLoggedIn')) {
-        // If the user is not logged in, redirect to the login page
-        window.location.href = 'https://rstudentlogin.blogspot.com/';
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      
+      // If the user is not logged in, redirect them to the login page
+      if (!isLoggedIn || isLoggedIn !== 'true') {
+        window.location.href = "https://rstudentlogin.blogspot.com/";  // Your login page URL
       }
     });
   </script>
@@ -37,6 +40,8 @@
 
   <!-- Heading -->
   <h2>Royal Educon Library</h2>
+
+  <!-- Your library content goes here -->
 
 </body>
 </html>
